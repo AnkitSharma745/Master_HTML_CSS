@@ -72,11 +72,11 @@ Master_HTML_CSS/
 
 ## 🛠️ **Tools and Resources**
 
-- **Text Editor**: [Visual Studio Code](https://code.visualstudio.com/)
+- **Text Editor**: <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
 - **Live Server Extension**: For real-time HTML and CSS previews.
 - **Browser Developer Tools**: For debugging and experimentation.
-- **MDN Web Docs**: [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- **W3 School Docs**: [HTML](https://www.w3schools.com/html/default.asp) , [CSS](https://www.w3schools.com/css/default.asp)
+- **MDN Web Docs**: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>
+- **W3 School Docs**: <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>, <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a>
 
 ---
 
@@ -95,11 +95,9 @@ Contributions are welcome! If you find any issues or have suggestions to improve
 
 If you have any questions or feedback, feel free to reach out:
 
-- **Email**: ankitaksharma9763@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/ankit-sharma745/)
-- **GitHub**: [Your GitHub Profile](https://github.com/AnkitSharma745)
-- **Portfolio**: [Ankit Sharma](https://ankitsharma745.github.io/)
-
----
+- **Email**: <a href="mailto:ankitaksharma9763@gmail.com" target="_blank">ankitaksharma9763@gmail.com</a>
+- **LinkedIn**: <a href="https://www.linkedin.com/in/ankit-sharma745/" target="_blank">Your LinkedIn Profile</a>
+- **GitHub**: <a href="https://github.com/AnkitSharma745" target="_blank">Your GitHub Profile</a>
+- **Portfolio**: <a href="https://ankitsharma745.github.io/" target="_blank">Ankit Sharma</a>
 
 Happy Coding! 😊
