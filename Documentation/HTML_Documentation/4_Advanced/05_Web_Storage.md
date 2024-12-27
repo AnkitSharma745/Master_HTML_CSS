@@ -1,16 +1,17 @@
----
-
 # Web Storage APIs
 
 ## 1. Introduction to Web Storage
+
 Web Storage APIs allow storing key-value pairs in a web browser more securely and efficiently than using cookies.
 
 ### Why Use Web Storage?
+
 - Store data locally without sending it to the server.
 - Larger storage capacity compared to cookies.
 - Faster data access.
 
 ### Types of Web Storage:
+
 1. **localStorage:** Persistent storage with no expiration.
 2. **sessionStorage:** Temporary storage that clears when the browser tab is closed.
 
@@ -207,5 +208,3 @@ localforage
 Web Storage APIs (`localStorage` and `sessionStorage`) provide simple ways to store and retrieve data on the client side. However, for complex or large-scale storage needs, consider libraries like **Store.js**, **localForage**, or **Dexie.js**.
 
 _Next Step: Explore IndexedDB for advanced client-side storage._
-
----
