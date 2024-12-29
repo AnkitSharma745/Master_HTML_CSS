@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive table</title>
+
+    <style>
+      .responsive-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .responsive-table th,
+      .responsive-table td {
+        padding: 8px;
+        text-align: left;
+      }
+      .responsive-table th {
+        background-color: #4caf50;
+        color: white;
+      }
+      .responsive-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      @media screen and (max-width: 600px) {
+        .responsive-table {
+          border: 0;
+        }
+        .responsive-table th,
+        .responsive-table td {
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      this is the bad example it should not work like this but i just want to
+      show, this thing we also can do
+    </h1>
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laptop</td>
+          <td>$1200</td>
+          <td>In Stock</td>
+        </tr>
+        <tr>
+          <td>Smartphone</td>
+          <td>$800</td>
+          <td>Out of Stock</td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>$500</td>
+          <td>In Stock</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

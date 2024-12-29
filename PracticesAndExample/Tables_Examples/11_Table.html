@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting enabled table</title>
+
+    <style>
+      /* Basic Table Styling */
+      .complex-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .complex-table th,
+      .complex-table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      /* Sortable Header Styling */
+      .sortable {
+        cursor: pointer;
+      }
+
+      .sortable:hover {
+        color: #007bff;
+      }
+
+      /* Hover and Active States */
+      .complex-table tr:hover {
+        background-color: #46dcf3;
+      }
+
+      /* Nested Table Styling */
+      .nested-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      .nested-table td {
+        padding: 5px 10px;
+        text-align: left;
+        border: none;
+      }
+
+      .page-btn {
+        padding: 8px 16px;
+        margin: 0 5px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .page-btn:hover {
+        background-color: #45a049;
+      }
+
+      .complex-table thead {
+        position: sticky;
+        top: 0;
+        background-color: #4caf50;
+        color: white;
+        z-index: 2;
+      }
+
+      /* Custom Scrollbar for Large Tables */
+      .complex-table {
+        max-height: 400px;
+        overflow-y: auto;
+        display: block;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .complex-table th,
+        .complex-table td {
+          padding: 8px;
+        }
+
+        .complex-table td {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="complex-table">
+      <thead>
+        <tr>
+          <th class="sortable" onclick="sortTable(0)">Product</th>
+          <th class="sortable" onclick="sortTable(1)">Price (USD)</th>
+          <th class="sortable" onclick="sortTable(2)">Stock</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laptop</td>
+          <td>$1200</td>
+          <td>50</td>
+          <td>
+            <table class="nested-table">
+              <tr>
+                <td>Specs:</td>
+                <td>Intel i7, 16GB RAM, 512GB SSD</td>
+              </tr>
+              <tr>
+                <td>Warranty:</td>
+                <td>2 years</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Smartphone</td>
+          <td>$800</td>
+          <td>30</td>
+          <td>
+            <table class="nested-table">
+              <tr>
+                <td>Specs:</td>
+                <td>Snapdragon 888, 8GB RAM, 128GB storage</td>
+              </tr>
+              <tr>
+                <td>Warranty:</td>
+                <td>1 year</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>$500</td>
+          <td>100</td>
+          <td>
+            <table class="nested-table">
+              <tr>
+                <td>Specs:</td>
+                <td>Apple A14, 4GB RAM, 64GB storage</td>
+              </tr>
+              <tr>
+                <td>Warranty:</td>
+                <td>1 year</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // Simple Table Sorting Function (ascending/descending)
+      function sortTable(n) {
+        const table = document.querySelector(".complex-table");
+        const rows = Array.from(table.rows).slice(1);
+        const isAscending =
+          table.rows[0].cells[n].classList.contains("ascending");
+
+        rows.sort((rowA, rowB) => {
+          const cellA = rowA.cells[n].innerText;
+          const cellB = rowB.cells[n].innerText;
+
+          if (isNaN(cellA) || isNaN(cellB)) {
+            return cellA.localeCompare(cellB);
+          } else {
+            return cellA - cellB;
+          }
+        });
+
+        // Toggle sorting direction
+        table.rows[0].cells[n].classList.toggle("ascending", !isAscending);
+        table.rows[0].cells[n].classList.toggle("descending", isAscending);
+
+        // Append sorted rows
+        rows.forEach((row) => table.appendChild(row));
+      }
+    </script>
+  </body>
+</html>

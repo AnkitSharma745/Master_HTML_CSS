@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with fixed header</title>
+
+    <style>
+      .fixed-header {
+        width: 100%;
+        border-collapse: collapse;
+        position: relative;
+      }
+      .fixed-header th,
+      .fixed-header td {
+        padding: 10px;
+        text-align: left;
+      }
+      .fixed-header th {
+        background-color: #4caf50;
+        color: white;
+      }
+      .fixed-header tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .fixed-header tr:nth-child(odd) {
+        background-color: #f1f1f1;
+      }
+      .fixed-header thead {
+        position: sticky;
+        top: 0;
+        background-color: #4caf50;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="fixed-header">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laptop</td>
+          <td>$1200</td>
+          <td>In Stock</td>
+        </tr>
+        <tr>
+          <td>Smartphone</td>
+          <td>$800</td>
+          <td>Out of Stock</td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>$500</td>
+          <td>In Stock</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

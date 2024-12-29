@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More complex table example</title>
+    <style>
+      /* Basic Table Styling */
+      .complex-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      /* Header Styles */
+      .complex-table th {
+        padding: 12px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+      }
+
+      .complex-table th[colspan] {
+        background-color: #3e8e41;
+      }
+
+      .complex-table th[rowspan] {
+        background-color: #3e8e41;
+      }
+
+      /* Body Styles */
+      .complex-table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        font-size: 14px;
+      }
+
+      /* Alternating Row Colors */
+      .complex-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .complex-table tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      /* Fixed Header */
+      .complex-table thead {
+        position: sticky;
+        top: 0;
+        background-color: #4caf50;
+        z-index: 1;
+      }
+
+      /* Action Buttons */
+      .btn-action {
+        padding: 5px 10px;
+        margin: 2px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-action:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .complex-table th,
+        .complex-table td {
+          padding: 8px;
+        }
+
+        .complex-table td {
+          font-size: 12px;
+        }
+
+        .btn-action {
+          padding: 4px 8px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="complex-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Product</th>
+          <th colspan="2">Price</th>
+          <th rowspan="2">Stock</th>
+          <th rowspan="2">Actions</th>
+        </tr>
+        <tr>
+          <th>USD</th>
+          <th>EUR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laptop</td>
+          <td>$1200</td>
+          <td>€1050</td>
+          <td>In Stock</td>
+          <td>
+            <button class="btn-action">Buy</button>
+            <button class="btn-action">Details</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Smartphone</td>
+          <td>$800</td>
+          <td>€700</td>
+          <td>Out of Stock</td>
+          <td>
+            <button class="btn-action">Buy</button>
+            <button class="btn-action">Details</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>$500</td>
+          <td>€450</td>
+          <td>In Stock</td>
+          <td>
+            <button class="btn-action">Buy</button>
+            <button class="btn-action">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

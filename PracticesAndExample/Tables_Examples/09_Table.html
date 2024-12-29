@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with rounded corners</title>
+    <style>
+      .rounded-corners {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 2px solid #4caf50;
+        border-radius: 10px;
+      }
+      .rounded-corners th,
+      .rounded-corners td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      .rounded-corners th {
+        background-color: #4caf50;
+        color: white;
+      }
+      .rounded-corners td {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="rounded-corners">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Deadline</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Design Homepage</td>
+          <td>2024-01-15</td>
+          <td>In Progress</td>
+        </tr>
+        <tr>
+          <td>Develop API</td>
+          <td>2024-02-01</td>
+          <td>Not Started</td>
+        </tr>
+        <tr>
+          <td>Test Website</td>
+          <td>2024-02-10</td>
+          <td>Pending</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

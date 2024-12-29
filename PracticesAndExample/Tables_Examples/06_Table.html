@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Striped table with hover effect</title>
+
+    <style>
+      .striped-hover {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .striped-hover th,
+      .striped-hover td {
+        padding: 10px;
+        text-align: left;
+      }
+      .striped-hover th {
+        background-color: #4caf50;
+        color: white;
+      }
+      .striped-hover tr:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+      .striped-hover tr:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="striped-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice</td>
+          <td>30</td>
+          <td>New York</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>25</td>
+          <td>San Francisco</td>
+        </tr>
+        <tr>
+          <td>Charlie</td>
+          <td>35</td>
+          <td>Los Angeles</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

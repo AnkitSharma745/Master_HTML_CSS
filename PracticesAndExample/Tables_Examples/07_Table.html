@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom border and cell padding</title>
+
+    <style>
+      .custom-border {
+        width: 100%;
+        border: 2px solid #4caf50;
+        border-collapse: collapse;
+      }
+      .custom-border th,
+      .custom-border td {
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+      .custom-border th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="custom-border">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Apple</td>
+          <td>$1.00</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Banana</td>
+          <td>$0.50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Orange</td>
+          <td>$0.75</td>
+          <td>75</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

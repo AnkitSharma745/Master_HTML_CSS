@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex Table Layout</title>
+    <style>
+      /* Basic Table Styling */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+      }
+
+      /* Multi-level Headers */
+      th[colspan] {
+        background-color: #3e8e41;
+      }
+
+      /* Fixed Header */
+      thead {
+        position: sticky;
+        top: 0;
+        background-color: #4caf50;
+        z-index: 1;
+      }
+
+      /* Row Hover Effects */
+      tr:hover {
+        background-color: #f2f2f2;
+      }
+
+      /* Alternating Row Colors */
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      /* Add spacing between rows */
+      tr {
+        transition: background-color 0.3s ease;
+      }
+
+      /* Custom Scrollbar for Table */
+      table {
+        max-height: 400px;
+        overflow-y: auto;
+        display: block;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        th,
+        td {
+          padding: 10px;
+          font-size: 12px;
+        }
+
+        table {
+          max-height: none;
+          width: 100%;
+        }
+      }
+
+      /* Custom styling for buttons */
+      .action-btn {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+
+      .action-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Advanced Table Layout with Multi-level Headers</h2>
+
+    <!-- Table with Multi-level Headers -->
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Product</th>
+          <th colspan="2">Pricing</th>
+          <th colspan="2">Stock Info</th>
+          <th rowspan="2">Actions</th>
+        </tr>
+        <tr>
+          <th>USD</th>
+          <th>EUR</th>
+          <th>Available</th>
+          <th>Sold</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laptop</td>
+          <td>$1200</td>
+          <td>€1050</td>
+          <td>50</td>
+          <td>200</td>
+          <td><a href="#" class="action-btn">Buy</a></td>
+        </tr>
+        <tr>
+          <td>Smartphone</td>
+          <td>$800</td>
+          <td>€700</td>
+          <td>30</td>
+          <td>150</td>
+          <td><a href="#" class="action-btn">Buy</a></td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>$500</td>
+          <td>€450</td>
+          <td>100</td>
+          <td>50</td>
+          <td><a href="#" class="action-btn">Buy</a></td>
+        </tr>
+        <tr>
+          <td>Headphones</td>
+          <td>$150</td>
+          <td>€130</td>
+          <td>200</td>
+          <td>30</td>
+          <td><a href="#" class="action-btn">Buy</a></td>
+        </tr>
+        <tr>
+          <td>Smartwatch</td>
+          <td>$250</td>
+          <td>€225</td>
+          <td>75</td>
+          <td>40</td>
+          <td><a href="#" class="action-btn">Buy</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
