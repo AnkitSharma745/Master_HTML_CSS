@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex Navigation Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      /* Navigation Container */
+      nav {
+        background-color: #2c3e50;
+        padding: 15px;
+        color: white;
+      }
+      /* Main Menu */
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+      }
+      /* List items (Menu Items) */
+      ul li {
+        position: relative;
+        padding: 10px 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+      }
+      ul li:hover {
+        background-color: #34495e;
+      }
+      /* Menu item icons */
+      ul li i {
+        margin-right: 8px;
+      }
+      /* Submenu Styling */
+      ul li ul {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #34495e;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      ul li:hover > ul {
+        display: block; /* Show submenu on hover */
+      }
+      ul li ul li {
+        padding: 10px;
+        text-align: left;
+        white-space: nowrap;
+      }
+      ul li ul li:hover {
+        background-color: #2c3e50;
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        ul {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        ul li {
+          width: 100%;
+        }
+        ul li ul {
+          position: static; /* Make submenus flow normally on small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- Main Menu Item 1 -->
+        <li>
+          <i class="fas fa-home"></i> Home
+          <ul>
+            <li>Sub-item 1</li>
+            <li>Sub-item 2</li>
+            <li>Sub-item 3</li>
+          </ul>
+        </li>
+        <!-- Main Menu Item 2 -->
+        <li>
+          <i class="fas fa-info-circle"></i> About Us
+          <ul>
+            <li>Company Info</li>
+            <li>Team</li>
+            <li>Careers</li>
+          </ul>
+        </li>
+        <!-- Main Menu Item 3 -->
+        <li>
+          <i class="fas fa-cogs"></i> Services
+          <ul>
+            <li>Web Design</li>
+            <li>SEO</li>
+            <li>Digital Marketing</li>
+            <li>Consulting</li>
+          </ul>
+        </li>
+        <!-- Main Menu Item 4 -->
+        <li>
+          <i class="fas fa-phone-alt"></i> Contact
+          <ul>
+            <li>Email Us</li>
+            <li>Call Us</li>
+            <li>Office Location</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

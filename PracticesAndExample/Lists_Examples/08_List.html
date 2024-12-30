@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive List with Flexbox</title>
+    <style>
+      ul {
+        display: flex; /* Makes list items flex */
+        flex-wrap: wrap; /* Allows items to wrap into new rows */
+        padding: 0;
+        list-style-type: none;
+      }
+      ul li {
+        margin: 10px;
+        width: calc(33.333% - 20px); /* 3 items per row */
+        box-sizing: border-box;
+      }
+      @media (max-width: 768px) {
+        ul li {
+          width: calc(50% - 20px); /* 2 items per row on smaller screens */
+        }
+      }
+      @media (max-width: 480px) {
+        ul li {
+          width: 100%; /* 1 item per row on very small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+    </ul>
+  </body>
+</html>
