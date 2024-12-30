@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with Textarea and File Upload</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      input[type="file"] {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Form with Textarea and File Upload</h2>
+    <form action="#">
+      <label for="username">Username:</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter your username"
+      /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Write your message"
+      ></textarea
+      ><br />
+
+      <label for="file">Upload File:</label><br />
+      <input type="file" id="file" name="file" /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

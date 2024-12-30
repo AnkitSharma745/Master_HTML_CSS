@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex Form with Date, Time, Range Slider, and Textarea</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Complex Form</h2>
+    <form action="#">
+      <label for="name">Full Name:</label><br />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+      /><br />
+
+      <label for="dob">Date of Birth:</label><br />
+      <input type="date" id="dob" name="dob" /><br />
+
+      <label for="appt">Preferred Time:</label><br />
+      <input type="time" id="appt" name="appt" /><br />
+
+      <label for="range">Range (1 to 100):</label><br />
+      <input
+        type="range"
+        id="range"
+        name="range"
+        min="1"
+        max="100"
+        value="50"
+      /><br />
+
+      <label for="message">Your Message:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder="Write your message here..."
+      ></textarea
+      ><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
