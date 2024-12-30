@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete HTML Page with Buttons, Tables, Lists, and Forms</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Button Styles */
+      .btn {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+      }
+
+      .btn:active {
+        transform: scale(1);
+      }
+
+      /* Table Styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        text-align: left;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 12px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      /* List Styles */
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      /* Form Styles */
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Learn HTML, CSS with Buttons, Tables, Lists, and Forms</h1>
+
+      <!-- Buttons Section -->
+      <section>
+        <h2>Buttons with Hover Effects</h2>
+        <button class="btn">Click Me</button>
+        <button class="btn">Learn More</button>
+        <button class="btn">Submit</button>
+      </section>
+
+      <!-- Tables Section -->
+      <section>
+        <h2>Sample Table</h2>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>123-456-7890</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>987-654-3210</td>
+          </tr>
+          <tr>
+            <td>Mary Johnson</td>
+            <td>mary@example.com</td>
+            <td>555-555-5555</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Lists Section -->
+      <section>
+        <h2>Unordered and Ordered Lists</h2>
+        <h3>Unordered List</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+        </ul>
+
+        <h3>Ordered List</h3>
+        <ol>
+          <li>Step 1: Start coding</li>
+          <li>Step 2: Learn HTML</li>
+          <li>Step 3: Style with CSS</li>
+          <li>Step 4: Make interactive with JavaScript</li>
+        </ol>
+      </section>
+
+      <!-- Forms Section -->
+      <section>
+        <h2>Form Example</h2>
+        <form action="#" method="post">
+          <label for="name">Full Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="country">Country:</label>
+          <select id="country" name="country">
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+          </select>
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
