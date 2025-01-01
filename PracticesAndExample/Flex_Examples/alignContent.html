@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align Content Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 250px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Align Content Examples */
+      .align-start {
+        align-content: flex-start;
+      }
+      .align-start .item {
+        background-color: lightcoral;
+      }
+
+      .align-end {
+        align-content: flex-end;
+      }
+      .align-end .item {
+        background-color: lightgreen;
+      }
+
+      .align-center {
+        align-content: center;
+      }
+      .align-center .item {
+        background-color: lightgoldenrodyellow;
+      }
+
+      .align-space-between {
+        align-content: space-between;
+      }
+      .align-space-between .item {
+        background-color: lightpink;
+      }
+
+      .align-space-around {
+        align-content: space-around;
+      }
+      .align-space-around .item {
+        background-color: lightcyan;
+      }
+
+      .align-space-evenly {
+        align-content: space-evenly;
+      }
+      .align-space-evenly .item {
+        background-color: lightgray;
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Align Content Deep Dive</h1>
+
+    <h2>1. align-content: flex-start</h2>
+    <p>Rows are packed at the start of the container.</p>
+    <div class="container align-start">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <h2>2. align-content: flex-end</h2>
+    <p>Rows are packed at the end of the container.</p>
+    <div class="container align-end">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <h2>3. align-content: center</h2>
+    <p>Rows are packed in the center of the container.</p>
+    <div class="container align-center">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <h2>4. align-content: space-between</h2>
+    <p>Rows are distributed with equal space between them.</p>
+    <div class="container align-space-between">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <h2>5. align-content: space-around</h2>
+    <p>Rows are distributed with equal space around them.</p>
+    <div class="container align-space-around">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <h2>6. align-content: space-evenly</h2>
+    <p>
+      Rows are distributed with equal space between, before, and after them.
+    </p>
+    <div class="container align-space-evenly">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for align-content:</h3>
+      <ul>
+        <li><strong>flex-start</strong>: Rows are packed at the top.</li>
+        <li><strong>flex-end</strong>: Rows are packed at the bottom.</li>
+        <li><strong>center</strong>: Rows are centered in the container.</li>
+        <li><strong>space-between</strong>: Equal space between rows.</li>
+        <li><strong>space-around</strong>: Equal space around rows.</li>
+        <li>
+          <strong>space-evenly</strong>: Equal space between, before, and after
+          rows.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>align-content</em> to control
+        row alignment in multi-line flex containers. Choose a value that
+        enhances the visual balance of your layout.
+      </p>
+    </div>
+  </body>
+</html>

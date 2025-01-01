@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Justify-Content Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 200px;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Justify-Content: Flex-Start */
+      .justify-start {
+        justify-content: flex-start;
+      }
+      .justify-start .item {
+        background-color: lightcoral;
+      }
+
+      /* Justify-Content: Flex-End */
+      .justify-end {
+        justify-content: flex-end;
+      }
+      .justify-end .item {
+        background-color: lightgreen;
+      }
+
+      /* Justify-Content: Center */
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-center .item {
+        background-color: lightgoldenrodyellow;
+      }
+
+      /* Justify-Content: Space-Between */
+      .justify-space-between {
+        justify-content: space-between;
+      }
+      .justify-space-between .item {
+        background-color: lightpink;
+      }
+
+      /* Justify-Content: Space-Around */
+      .justify-space-around {
+        justify-content: space-around;
+      }
+      .justify-space-around .item {
+        background-color: lightseagreen;
+      }
+
+      /* Justify-Content: Space-Evenly */
+      .justify-space-evenly {
+        justify-content: space-evenly;
+      }
+      .justify-space-evenly .item {
+        background-color: lightsalmon;
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Justify-Content Deep Dive</h1>
+
+    <h2>1. justify-content: flex-start (Default)</h2>
+    <p>Items are aligned to the start of the main axis.</p>
+    <div class="container justify-start">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. justify-content: flex-end</h2>
+    <p>Items are aligned to the end of the main axis.</p>
+    <div class="container justify-end">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>3. justify-content: center</h2>
+    <p>Items are aligned to the center of the main axis.</p>
+    <div class="container justify-center">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>4. justify-content: space-between</h2>
+    <p>
+      Items are evenly distributed with the first and last items at the edges.
+    </p>
+    <div class="container justify-space-between">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>5. justify-content: space-around</h2>
+    <p>Items are evenly distributed with space around them.</p>
+    <div class="container justify-space-around">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>6. justify-content: space-evenly</h2>
+    <p>Items are evenly distributed with equal space between them.</p>
+    <div class="container justify-space-evenly">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for justify-content:</h3>
+      <ul>
+        <li>
+          <strong>flex-start</strong>: Aligns items to the start of the main
+          axis.
+        </li>
+        <li>
+          <strong>flex-end</strong>: Aligns items to the end of the main axis.
+        </li>
+        <li>
+          <strong>center</strong>: Aligns items to the center of the main axis.
+        </li>
+        <li>
+          <strong>space-between</strong>: Distributes items with maximum space
+          between.
+        </li>
+        <li>
+          <strong>space-around</strong>: Distributes items with space around
+          each.
+        </li>
+        <li>
+          <strong>space-evenly</strong>: Distributes items with equal space
+          between.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>flex-start</em> for default
+        layouts and <em>space-between</em> for equal distribution.
+      </p>
+    </div>
+  </body>
+</html>

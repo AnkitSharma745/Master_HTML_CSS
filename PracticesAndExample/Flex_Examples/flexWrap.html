@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Wrap Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Flex Wrap: No Wrap */
+      .wrap-nowrap {
+        flex-wrap: nowrap;
+      }
+      .wrap-nowrap .item {
+        background-color: lightcoral;
+      }
+
+      /* Flex Wrap: Wrap */
+      .wrap-wrap {
+        flex-wrap: wrap;
+      }
+      .wrap-wrap .item {
+        background-color: lightgreen;
+      }
+
+      /* Flex Wrap: Wrap-Reverse */
+      .wrap-wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+      .wrap-wrap-reverse .item {
+        background-color: lightgoldenrodyellow;
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Wrap Deep Dive</h1>
+
+    <h2>1. flex-wrap: nowrap (Default)</h2>
+    <p>Items are placed on a single line, and overflow is not wrapped.</p>
+    <div class="container wrap-nowrap">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+    </div>
+
+    <h2>2. flex-wrap: wrap</h2>
+    <p>Items wrap onto multiple lines if necessary, from top to bottom.</p>
+    <div class="container wrap-wrap">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+    </div>
+
+    <h2>3. flex-wrap: wrap-reverse</h2>
+    <p>Items wrap onto multiple lines if necessary, but from bottom to top.</p>
+    <div class="container wrap-wrap-reverse">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for flex-wrap:</h3>
+      <ul>
+        <li>
+          <strong>nowrap</strong>: Default value, all items are placed on a
+          single line, even if they overflow.
+        </li>
+        <li>
+          <strong>wrap</strong>: Items wrap onto new lines when needed, from top
+          to bottom.
+        </li>
+        <li>
+          <strong>wrap-reverse</strong>: Items wrap onto new lines when needed,
+          but from bottom to top.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>nowrap</em> for simple,
+        single-line layouts. <em>Wrap</em> is ideal for responsive designs, and
+        <em>wrap-reverse</em> is suitable for specialized layouts.
+      </p>
+    </div>
+  </body>
+</html>

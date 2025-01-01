@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Align-Items Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 200px;
+        height: 300px;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Align-Items: Flex-Start */
+      .align-start {
+        align-items: flex-start;
+      }
+      .align-start .item {
+        background-color: lightcoral;
+      }
+
+      /* Align-Items: Flex-End */
+      .align-end {
+        align-items: flex-end;
+      }
+      .align-end .item {
+        background-color: lightgreen;
+      }
+
+      /* Align-Items: Center */
+      .align-center {
+        align-items: center;
+      }
+      .align-center .item {
+        background-color: lightgoldenrodyellow;
+      }
+
+      /* Align-Items: Stretch */
+      .align-stretch {
+        align-items: stretch;
+      }
+      .align-stretch .item {
+        background-color: lightpink;
+      }
+
+      /* Align-Items: Baseline */
+      .align-baseline {
+        align-items: baseline;
+      }
+      .align-baseline .item {
+        background-color: lightseagreen;
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Align-Items Deep Dive</h1>
+
+    <h2>1. align-items: flex-start</h2>
+    <p>Items align at the start of the cross axis.</p>
+    <div class="container align-start">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. align-items: flex-end</h2>
+    <p>Items align at the end of the cross axis.</p>
+    <div class="container align-end">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>3. align-items: center</h2>
+    <p>Items align at the center of the cross axis.</p>
+    <div class="container align-center">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>4. align-items: stretch</h2>
+    <p>Items stretch to fill the container along the cross axis.</p>
+    <div class="container align-stretch">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>5. align-items: baseline</h2>
+    <p>Items align based on their text baselines.</p>
+    <div class="container align-baseline">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for align-items:</h3>
+      <ul>
+        <li>
+          <strong>flex-start</strong>: Aligns items to the start of the cross
+          axis.
+        </li>
+        <li>
+          <strong>flex-end</strong>: Aligns items to the end of the cross axis.
+        </li>
+        <li>
+          <strong>center</strong>: Aligns items to the center of the cross axis.
+        </li>
+        <li>
+          <strong>stretch</strong>: Stretches items to fill the container's
+          cross axis.
+        </li>
+        <li>
+          <strong>baseline</strong>: Aligns items based on their text baseline.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>align-items: center</em> for
+        vertical centering and <em>stretch</em> for uniform alignment.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Direction Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 200px;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Flex Direction: Row */
+      .direction-row {
+        flex-direction: row;
+      }
+      .direction-row .item {
+        background-color: lightcoral;
+      }
+
+      /* Flex Direction: Row-Reverse */
+      .direction-row-reverse {
+        flex-direction: row-reverse;
+      }
+      .direction-row-reverse .item {
+        background-color: lightgreen;
+      }
+
+      /* Flex Direction: Column */
+      .direction-column {
+        flex-direction: column;
+      }
+      .direction-column .item {
+        background-color: lightgoldenrodyellow;
+      }
+
+      /* Flex Direction: Column-Reverse */
+      .direction-column-reverse {
+        flex-direction: column-reverse;
+      }
+      .direction-column-reverse .item {
+        background-color: lightpink;
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Direction Deep Dive</h1>
+
+    <h2>1. flex-direction: row (Default)</h2>
+    <p>Items are placed in a row, from left to right.</p>
+    <div class="container direction-row">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. flex-direction: row-reverse</h2>
+    <p>Items are placed in a row, but from right to left.</p>
+    <div class="container direction-row-reverse">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>3. flex-direction: column</h2>
+    <p>Items are placed in a column, from top to bottom.</p>
+    <div class="container direction-column">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>4. flex-direction: column-reverse</h2>
+    <p>Items are placed in a column, but from bottom to top.</p>
+    <div class="container direction-column-reverse">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for flex-direction:</h3>
+      <ul>
+        <li>
+          <strong>row</strong>: Default value, aligns items horizontally from
+          left to right.
+        </li>
+        <li>
+          <strong>row-reverse</strong>: Aligns items horizontally from right to
+          left.
+        </li>
+        <li>
+          <strong>column</strong>: Aligns items vertically from top to bottom.
+        </li>
+        <li>
+          <strong>column-reverse</strong>: Aligns items vertically from bottom
+          to top.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>row</em> for horizontal layouts
+        and <em>column</em> for vertical layouts. Reverse values are useful for
+        specific UI needs like right-aligned menus or reverse stacking.
+      </p>
+    </div>
+  </body>
+</html>

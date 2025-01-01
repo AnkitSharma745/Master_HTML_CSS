@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Wrap with Centered Rows</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center; /* Centers rows in the container */
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 300px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Example Styling for Additional Cases */
+      .container.centered-wrap {
+        justify-content: center; /* Centers items horizontally in each row */
+      }
+
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Wrap with Centered Rows</h1>
+
+    <h2>Centered Rows After Wrapping</h2>
+    <p>
+      This example demonstrates how to center rows vertically when items wrap to
+      the next line.
+    </p>
+    <div class="container centered-wrap">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+      <div class="item">Item 7</div>
+      <div class="item">Item 8</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for Centered Rows:</h3>
+      <ul>
+        <li>
+          Use <strong>align-content: center;</strong> to center rows vertically
+          within the container.
+        </li>
+        <li>
+          Combine with <strong>justify-content: center;</strong> to horizontally
+          center items in each row.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Centering rows is useful in responsive
+        layouts where the container size may vary.
+      </p>
+    </div>
+  </body>
+</html>
