@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-shrink vs flex</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 120px;
+      }
+
+      /* flex-shrink Example */
+      .flex-shrink-example .item:nth-child(1) {
+        flex-shrink: 1; /* Item will shrink when needed */
+      }
+      .flex-shrink-example .item:nth-child(2) {
+        flex-shrink: 0; /* Item will not shrink */
+      }
+
+      /* flex Example */
+      .flex-example .item:nth-child(1) {
+        flex: 1 1 100px; /* flex-grow: 1, flex-shrink: 1, flex-basis: 100px */
+      }
+      .flex-example .item:nth-child(2) {
+        flex: 1 0 150px; /* flex-grow: 1, flex-shrink: 0, flex-basis: 150px */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-shrink vs flex</h1>
+
+    <h2>1. flex-shrink (Controlling Shrinking)</h2>
+    <p>
+      The <strong>flex-shrink</strong> property defines the ability of an item
+      to shrink when there's not enough space in the container. In this example,
+      the first item can shrink, while the second item won't shrink at all.
+    </p>
+    <div class="container flex-shrink-example">
+      <div class="item">Item 1 (flex-shrink: 1)</div>
+      <div class="item">Item 2 (flex-shrink: 0)</div>
+    </div>
+
+    <h2>2. flex (Shorthand for flex-grow, flex-shrink, and flex-basis)</h2>
+    <p>
+      The <strong>flex</strong> property is a shorthand for
+      <code>flex-grow</code>, <code>flex-shrink</code>, and
+      <code>flex-basis</code>. It allows you to set all these properties in one
+      declaration.
+    </p>
+    <div class="container flex-example">
+      <div class="item">Item 1 (flex: 1 1 100px)</div>
+      <div class="item">Item 2 (flex: 1 0 150px)</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>
+          <strong>flex-shrink:</strong> Controls the shrinking behavior of an
+          item when there’s not enough space in the container. A value of 0
+          means the item will not shrink.
+        </li>
+        <li>
+          <strong>flex:</strong> A shorthand property that sets
+          <code>flex-grow</code>, <code>flex-shrink</code>, and
+          <code>flex-basis</code> in one declaration. It includes shrink
+          behavior along with grow and basis values.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>flex-shrink</em> when you want
+        to control how an individual item shrinks when there’s not enough space.
+        Use <em>flex</em> when you want to set all space-related properties
+        (grow, shrink, basis) in one go.
+      </p>
+    </div>
+  </body>
+</html>

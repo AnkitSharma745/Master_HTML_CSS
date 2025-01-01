@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-items vs align-self</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 150px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Align-items Example */
+      .align-items-example {
+        align-items: flex-end; /* Align all items at the bottom */
+      }
+
+      /* Align-self Example */
+      .align-self-example .item:nth-child(1) {
+        align-self: flex-start; /* Align this item to the top */
+      }
+      .align-self-example .item:nth-child(2) {
+        align-self: center; /* Align this item to the center */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>align-items vs align-self</h1>
+
+    <h2>1. align-items (Aligning All Items)</h2>
+    <p>
+      The <strong>align-items</strong> property is used to align all flex items
+      along the cross axis (vertical by default). It affects every item within
+      the container.
+    </p>
+    <div class="container align-items-example">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. align-self (Aligning Individual Items)</h2>
+    <p>
+      The <strong>align-self</strong> property is used to align an individual
+      item along the cross axis, overriding the <code>align-items</code> setting
+      for that item.
+    </p>
+    <div class="container align-self-example">
+      <div class="item">Item 1 (top aligned)</div>
+      <div class="item">Item 2 (center aligned)</div>
+      <div class="item">Item 3 (default)</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>
+          <strong>align-items:</strong> Aligns all items along the cross axis in
+          the container.
+        </li>
+        <li>
+          <strong>align-self:</strong> Aligns an individual item along the cross
+          axis, overriding the container's <code>align-items</code> value.
+        </li>
+        <li>
+          Use <strong>align-items</strong> to control the alignment of all
+          items, and <strong>align-self</strong> to override the default
+          alignment for specific items.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>align-items</em> for consistent
+        alignment across items and <em>align-self</em> when you need to adjust
+        the position of a single item.
+      </p>
+    </div>
+  </body>
+</html>

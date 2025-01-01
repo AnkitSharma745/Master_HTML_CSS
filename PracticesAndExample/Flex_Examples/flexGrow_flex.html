@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-grow vs flex</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* flex-grow Example */
+      .flex-grow-example .item:nth-child(1) {
+        flex-grow: 2; /* This item grows 2 times more than others */
+      }
+      .flex-grow-example .item:nth-child(2) {
+        flex-grow: 1; /* This item grows normally */
+      }
+
+      /* flex Example */
+      .flex-example .item:nth-child(1) {
+        flex: 1; /* Shorthand for flex-grow: 1, flex-shrink: 1, flex-basis: 0% */
+      }
+      .flex-example .item:nth-child(2) {
+        flex: 2 1 150px; /* flex-grow: 2, flex-shrink: 1, flex-basis: 150px */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-grow vs flex</h1>
+
+    <h2>1. flex-grow (Space Distribution)</h2>
+    <p>
+      The <strong>flex-grow</strong> property allows an item to grow relative to
+      other items in the container. In this example, the first item grows 2
+      times more than the second item.
+    </p>
+    <div class="container flex-grow-example">
+      <div class="item">Item 1 (flex-grow: 2)</div>
+      <div class="item">Item 2 (flex-grow: 1)</div>
+    </div>
+
+    <h2>2. flex (Shorthand for flex-grow, flex-shrink, and flex-basis)</h2>
+    <p>
+      The <strong>flex</strong> property is a shorthand for
+      <code>flex-grow</code>, <code>flex-shrink</code>, and
+      <code>flex-basis</code>. It allows you to set all these properties in one
+      declaration.
+    </p>
+    <div class="container flex-example">
+      <div class="item">Item 1 (flex: 1)</div>
+      <div class="item">Item 2 (flex: 2 1 150px)</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>
+          <strong>flex-grow:</strong> Controls how much an item should grow in
+          relation to others when there's extra space in the container. The
+          higher the value, the more space it takes up.
+        </li>
+        <li>
+          <strong>flex:</strong> A shorthand that sets all three flex properties
+          (grow, shrink, basis) at once. Use it when you want to quickly set
+          multiple properties in one line.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>flex-grow</em> when you only
+        need to control an item’s growth. Use <em>flex</em> when you want to set
+        multiple properties for an item in one concise declaration.
+      </p>
+    </div>
+  </body>
+</html>

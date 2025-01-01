@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Properties Comparison</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* flex-grow vs flex-shrink */
+      .flex-grow-shrink .item:nth-child(1) {
+        flex-grow: 1; /* This item grows */
+      }
+      .flex-grow-shrink .item:nth-child(2) {
+        flex-shrink: 1; /* This item shrinks when space is tight */
+      }
+
+      /* justify-content vs align-items */
+      .justify-content-align-items {
+        justify-content: space-between; /* Distributes space between items */
+        align-items: center; /* Vertically aligns items in the center */
+      }
+
+      /* flex vs flex-basis */
+      .flex-vs-basis .item:nth-child(1) {
+        flex: 1; /* Shorthand for flex-grow: 1, flex-shrink: 1, flex-basis: 0% */
+      }
+      .flex-vs-basis .item:nth-child(2) {
+        flex-basis: 150px; /* Initial size is set to 150px */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Properties Comparison</h1>
+
+    <h2>1. flex-grow vs flex-shrink</h2>
+    <p>
+      <strong>flex-grow</strong> allows an item to take up additional space,
+      while <strong>flex-shrink</strong> causes an item to shrink when space is
+      limited.
+    </p>
+    <div class="container flex-grow-shrink">
+      <div class="item">Item 1 (flex-grow)</div>
+      <div class="item">Item 2 (flex-shrink)</div>
+    </div>
+
+    <h2>2. justify-content vs align-items</h2>
+    <p>
+      <strong>justify-content</strong> aligns items along the main axis, while
+      <strong>align-items</strong> aligns items along the cross axis.
+    </p>
+    <div class="container justify-content-align-items">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>3. flex vs flex-basis</h2>
+    <p>
+      The <strong>flex</strong> shorthand combines <code>flex-grow</code>,
+      <code>flex-shrink</code>, and <code>flex-basis</code> in one property. In
+      contrast, <strong>flex-basis</strong> only sets the initial size of the
+      item before distributing space.
+    </p>
+    <div class="container flex-vs-basis">
+      <div class="item">Item 1 (flex)</div>
+      <div class="item">Item 2 (flex-basis)</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>
+          <strong>flex-grow</strong> vs <strong>flex-shrink</strong>:
+          <ul>
+            <li>
+              <strong>Use <code>flex-grow</code>:</strong> When you want items
+              to grow and occupy extra space.
+            </li>
+            <li>
+              <strong>Use <code>flex-shrink</code>:</strong> When you want items
+              to shrink to fit within a container.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>justify-content</strong> vs <strong>align-items</strong>:
+          <ul>
+            <li>
+              <strong>Use <code>justify-content</code>:</strong> To align items
+              along the main axis (horizontal by default).
+            </li>
+            <li>
+              <strong>Use <code>align-items</code>:</strong> To align items
+              along the cross axis (vertical by default).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>flex</strong> vs <strong>flex-basis</strong>:
+          <ul>
+            <li>
+              <strong>Use <code>flex</code> shorthand:</strong> When you want to
+              set all three flex properties (grow, shrink, basis) in one line.
+            </li>
+            <li>
+              <strong>Use <code>flex-basis</code>:</strong> When you need to set
+              the initial size of an item before distributing space.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practices:</strong> Choose the right property based on the
+        design and behavior you need. Use shorthand for simplicity, and consider
+        the visual behavior you want when resizing items.
+      </p>
+    </div>
+  </body>
+</html>
