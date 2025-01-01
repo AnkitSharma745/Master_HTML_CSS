@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Item Order Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+      }
+
+      /* Item-specific Order Examples */
+      .order-default .item {
+        order: 0; /* Default */
+      }
+
+      .order-modified .item:nth-child(1) {
+        order: 2;
+      }
+      .order-modified .item:nth-child(2) {
+        order: 1;
+      }
+      .order-modified .item:nth-child(3) {
+        order: 3;
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Item Order Deep Dive</h1>
+
+    <h2>1. Default Order (order: 0)</h2>
+    <p>
+      By default, all flex items have an order value of <strong>0</strong>. They
+      are displayed in the order they appear in the HTML.
+    </p>
+    <div class="container order-default">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. Custom Order</h2>
+    <p>
+      The <strong>order</strong> property determines the position of an item
+      within the container. Items are displayed in ascending order based on
+      their <code>order</code> value.
+    </p>
+    <div class="container order-modified">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for order:</h3>
+      <ul>
+        <li>
+          <strong>Default:</strong> All items have an <code>order</code> value
+          of <code>0</code>.
+        </li>
+        <li>
+          <strong>Custom Order:</strong> Set <code>order</code> to a positive or
+          negative value to change the position of an item.
+        </li>
+        <li>
+          Items are arranged in ascending order of their <code>order</code>
+          values.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>order</em> to create responsive
+        layouts or rearrange items dynamically.
+      </p>
+    </div>
+  </body>
+</html>

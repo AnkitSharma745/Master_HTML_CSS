@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Item Flex-Shrink Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 300px; /* Limited space */
+        overflow: hidden;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 150px; /* Base width for items */
+      }
+
+      /* Flex-Shrink Examples */
+      .flex-shrink-default .item {
+        flex-shrink: 1; /* Default */
+      }
+
+      .flex-shrink-modified .item:nth-child(1) {
+        flex-shrink: 1; /* Shrinks slightly */
+      }
+      .flex-shrink-modified .item:nth-child(2) {
+        flex-shrink: 2; /* Shrinks more */
+      }
+      .flex-shrink-modified .item:nth-child(3) {
+        flex-shrink: 0; /* Does not shrink */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Item Flex-Shrink Deep Dive</h1>
+
+    <h2>1. Default Flex-Shrink (flex-shrink: 1)</h2>
+    <p>
+      By default, all flex items have a <code>flex-shrink</code> value of
+      <strong>1</strong>, meaning they shrink equally when space is limited.
+    </p>
+    <div class="container flex-shrink-default">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. Custom Flex-Shrink</h2>
+    <p>
+      The <strong>flex-shrink</strong> property determines how much an item
+      shrinks relative to others. Items with higher values shrink more, while
+      items with a value of <code>0</code> do not shrink at all.
+    </p>
+    <div class="container flex-shrink-modified">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for flex-shrink:</h3>
+      <ul>
+        <li>
+          <strong>Default:</strong> The default value is <code>1</code>, meaning
+          all items shrink equally.
+        </li>
+        <li>
+          <strong>Custom Shrinkage:</strong> Items with higher
+          <code>flex-shrink</code> values shrink more.
+        </li>
+        <li>
+          <strong>No Shrinkage:</strong> Items with <code>flex-shrink: 0</code>
+          do not shrink.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>flex-shrink</em> to control how
+        items adjust when space is constrained.
+      </p>
+    </div>
+  </body>
+</html>

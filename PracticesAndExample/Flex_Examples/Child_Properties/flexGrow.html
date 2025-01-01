@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Item Flex-Grow Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 80px; /* Base width for items */
+      }
+
+      /* Example Styling */
+      .flex-grow-default .item {
+        flex-grow: 0; /* Default */
+      }
+
+      .flex-grow-modified .item:nth-child(1) {
+        flex-grow: 1; /* Grows to occupy 1x space */
+      }
+      .flex-grow-modified .item:nth-child(2) {
+        flex-grow: 2; /* Grows to occupy 2x space */
+      }
+      .flex-grow-modified .item:nth-child(3) {
+        flex-grow: 3; /* Grows to occupy 3x space */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Item Flex-Grow Deep Dive</h1>
+
+    <h2>1. Default Flex-Grow (flex-grow: 0)</h2>
+    <p>
+      By default, flex items do not grow to fill the remaining space in the
+      container.
+    </p>
+    <div class="container flex-grow-default">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. Custom Flex-Grow</h2>
+    <p>
+      The <strong>flex-grow</strong> property determines how much an item will
+      grow relative to other items. Items with larger <code>flex-grow</code>
+      values occupy more space.
+    </p>
+    <div class="container flex-grow-modified">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for flex-grow:</h3>
+      <ul>
+        <li>
+          <strong>Default:</strong> The default value is <code>0</code>, meaning
+          the item does not grow.
+        </li>
+        <li>
+          <strong>Custom Growth:</strong> Items with higher
+          <code>flex-grow</code>
+          values occupy more space relative to others.
+        </li>
+        <li>
+          Items grow proportionally based on their
+          <code>flex-grow</code> values.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>flex-grow</em> to create dynamic
+        layouts that adapt to available space.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Item Flex-Basis Deep Dive</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 40px;
+        min-height: 120px;
+        max-width: 100%;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid #007bff;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* Flex-Basis Examples */
+      .flex-basis-default .item {
+        flex-basis: auto; /* Default */
+      }
+
+      .flex-basis-modified .item:nth-child(1) {
+        flex-basis: 50px; /* Fixed size */
+      }
+      .flex-basis-modified .item:nth-child(2) {
+        flex-basis: 150px; /* Larger size */
+      }
+      .flex-basis-modified .item:nth-child(3) {
+        flex-basis: 100px; /* Medium size */
+      }
+
+      /* Documentation */
+      .docs {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Item Flex-Basis Deep Dive</h1>
+
+    <h2>1. Default Flex-Basis (flex-basis: auto)</h2>
+    <p>
+      By default, the size of each flex item is determined by its content or
+      width.
+    </p>
+    <div class="container flex-basis-default">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>2. Custom Flex-Basis</h2>
+    <p>
+      The <strong>flex-basis</strong> property sets the initial size of a flex
+      item. It can take values like <code>px</code>, <code>%</code>, or
+      <code>auto</code>.
+    </p>
+    <div class="container flex-basis-modified">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="docs">
+      <h3>Key Takeaways for flex-basis:</h3>
+      <ul>
+        <li>
+          <strong>Default:</strong> The default value is <code>auto</code>,
+          where the item's size depends on its content or width.
+        </li>
+        <li>
+          <strong>Custom Size:</strong> You can set a fixed size using units
+          like <code>px</code> or <code>%</code>.
+        </li>
+        <li>
+          <strong>Flexibility:</strong> Works in conjunction with
+          <code>flex-grow</code> and <code>flex-shrink</code> for dynamic
+          layouts.
+        </li>
+      </ul>
+      <p>
+        <strong>Best Practice:</strong> Use <em>flex-basis</em> to define
+        consistent item sizes in a flex container.
+      </p>
+    </div>
+  </body>
+</html>
